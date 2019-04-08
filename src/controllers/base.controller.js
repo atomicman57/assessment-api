@@ -26,7 +26,6 @@ class Base extends DBQuery {
   }
 updateItem = async (req, res) => {
     const { body, params: { id } } = req;
-    console.log(body);
     body.id = id;
 
     try {
@@ -39,7 +38,8 @@ updateItem = async (req, res) => {
         })
     }
   }
-  deleteItem = async (req, res, next, id) => {
+  deleteItem = async (req, res) => {
+      const { params: { id } } = req;
     try {
         const response = await this.delete(this.model, id)
         return res.status(200).json(response);
@@ -70,9 +70,13 @@ updateItem = async (req, res) => {
   findItemById = async (req, res, next, id) => {
     try {
         const response = await this.findbyId(this.model, id)
+        if(response.deleted_at != null) {
+            return res.status(400).json({
+                message: 'This item does not exist'
+            });
+        }
         req.details = response;
         next();
-        // return res.status(200).json(response);
     } catch (e) {
         console.log(e)
         return res.status(500).json({
