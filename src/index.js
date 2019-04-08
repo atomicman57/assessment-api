@@ -1,8 +1,8 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const helmet = require('helmet');
-const dbConfig = require('./config');
-const mongoose = require('mongoose');
+import express from 'express';
+import bodyParser from 'body-parser';
+import helmet from 'helmet';
+import mongoose from 'mongoose';
+import dbConfig from './config';
 
 mongoose.Promise = global.Promise;
 
