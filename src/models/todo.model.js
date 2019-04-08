@@ -41,6 +41,10 @@ const todo = {
 const todoSchema = Schema(todo);
 todoSchema.plugin(require('mongoose-autopopulate'));
 
-const Todo = mongoose.model('Todo', todoSchema);
+todoSchema.index({
+  title: 'text',
+});
+
+const Todo = mongoose.model('Todo', todoSchema, 'todos');
 
 export default Todo;

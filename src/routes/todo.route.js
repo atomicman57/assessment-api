@@ -8,6 +8,7 @@ router.param('id', todoController.findItemById);
 
 
 router.get('/todos', todoController.findAllItems);
+router.get('/todos/search', todoController.searchTodo);
 router.post("/todos", validator.validateTodo, todoController.createItem);
 router.route('/todos/:id')
   .get(todoController.getItem)
