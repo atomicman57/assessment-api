@@ -31,7 +31,9 @@ const todo = {
     type: Date,
   },
   user: {
-    type: Schema.Types.ObjectId, ref: 'User',
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
   },
 };
 
