@@ -1,0 +1,42 @@
+{
+  "name": "assessment-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node dist/index.js",
+    "start:dev": "nodemon --exec babel-node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "NODE_ENV=production npm run build",
+    "build": "rm -rf dist && mkdir dist && babel src --out-dir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atomicman57/assessment-api.git"
+  },
+  "author": "Blessing Philips",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atomicman57/assessment-api/issues"
+  },
+  "homepage": "https://github.com/atomicman57/assessment-api#readme",
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-transform-regenerator": "^7.4.3",
+    "body-parser": "^1.18.3",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "mongoose": "^5.4.22"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "nodemon": "^1.18.10"
+  }
+}
