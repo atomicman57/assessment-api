@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const helmet = require('helmet');
 const dbConfig = require('./config');
 const mongoose = require('mongoose');
 
@@ -23,6 +23,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(bodyParser.json())
+app.use(helmet());
 
 app.get('/', (req, res) => {
     res.json({ "message": "Welcome to Assessment API" });
