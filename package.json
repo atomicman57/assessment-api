@@ -1,0 +1,26 @@
+{
+  "name": "assessment-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atomicman57/assessment-api.git"
+  },
+  "author": "Blessing Philips",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atomicman57/assessment-api/issues"
+  },
+  "homepage": "https://github.com/atomicman57/assessment-api#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.22"
+  }
+}
