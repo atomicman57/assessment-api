@@ -26,6 +26,9 @@ const todo = {
   completed_at: {
     type: Date,
   },
+  user: {
+    type: Schema.Types.ObjectId, ref: 'User',
+  },
 };
 
 const todoSchema = Schema(todo);

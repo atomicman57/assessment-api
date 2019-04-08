@@ -5,6 +5,12 @@ const user = {
     type: String,
     required: true,
   },
+  todos: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Todo',
+    },
+  ],
 };
 
 const userSchema = Schema(user);
