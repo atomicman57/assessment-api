@@ -3,6 +3,8 @@ import bodyParser from 'body-parser';
 import helmet from 'helmet';
 import mongoose from 'mongoose';
 import dbConfig from './config';
+import userRoutes from './routes/user.route';
+import todoRoutes from './routes/todo.route';
 
 mongoose.Promise = global.Promise;
 
@@ -24,6 +26,10 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(bodyParser.json())
 app.use(helmet());
+
+app.use('/api/v1', userRoutes);
+app.use('/api/v1', todoRoutes);
+
 
 app.get('/', (req, res) => {
     res.json({ "message": "Welcome to Assessment API" });

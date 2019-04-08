@@ -5,6 +5,13 @@ const user = {
     type: String,
     required: true,
   },
+  created_at: {
+    type: Date,
+    default: Date.now,
+  },
+  deleted_at: {
+    type: Date,
+  },
   todos: [
     {
       type: Schema.Types.ObjectId,

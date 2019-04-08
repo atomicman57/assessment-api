@@ -5,6 +5,10 @@ const todo = {
     type: String,
     required: true,
   },
+  description: {
+    type: String,
+    required: true,
+  },
   priority: {
     type: String,
     enum: ['HIGH', 'MEDIUM', 'LOW'],
