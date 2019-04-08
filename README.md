@@ -22,3 +22,4 @@ Prefix the endpoint with `/api/v1/`
 - `POST /todos` - create a todo
 - `PUT /todos/:id` - update a todo with the todo id
 - `DELETE /todos/:id` - delete a todo with the todo id
+- `GET /todos/search?q=query` - Search Todo with title
