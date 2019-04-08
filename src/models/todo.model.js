@@ -1,0 +1,34 @@
+import mongoose, { Schema } from 'mongoose';
+
+const todo = {
+  title: {
+    type: String,
+    required: true,
+  },
+  priority: {
+    type: String,
+    enum: ['HIGH', 'MEDIUM', 'LOW'],
+    default: 'LOW',
+    required: true,
+  },
+  completed: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+  created_at: {
+    type: Date,
+    default: Date.now,
+  },
+  deleted_at: {
+    type: Date,
+  },
+  completed_at: {
+    type: Date,
+  },
+};
+
+const todoSchema = Schema(todo);
+const Todo = mongoose.model('Todo', todoSchema);
+
+export default Todo;
