@@ -10,7 +10,6 @@ class TodoController extends Base {
     const searchQuery = {};
     const { body, query } = req;
     const q = query.q ? query.q : null 
-    const date = query.date ? query.date : null 
     if(q) {
       searchQuery.$text = {
         $search: q
