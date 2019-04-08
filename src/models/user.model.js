@@ -16,11 +16,14 @@ const user = {
     {
       type: Schema.Types.ObjectId,
       ref: 'Todo',
+      autopopulate: true,
     },
   ],
 };
 
 const userSchema = Schema(user);
+userSchema.plugin(require('mongoose-autopopulate'));
+
 const User = mongoose.model('User', userSchema);
 
 export default User;

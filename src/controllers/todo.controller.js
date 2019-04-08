@@ -5,6 +5,10 @@ class TodoController extends Base {
   constructor(model) {
     super(model);
   }
+
+  getWithUser = (req, res) => {
+    
+  }
 }
 
 export default new TodoController(Todo);

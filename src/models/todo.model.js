@@ -34,10 +34,13 @@ const todo = {
     type: Schema.Types.ObjectId,
     ref: 'User',
     required: true,
+    autopopulate: true,
   },
 };
 
 const todoSchema = Schema(todo);
+todoSchema.plugin(require('mongoose-autopopulate'));
+
 const Todo = mongoose.model('Todo', todoSchema);
 
 export default Todo;
